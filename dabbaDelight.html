@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VendMart - Affordable Vending Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f0f7ff, #ffffff);
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            padding: 8rem 5% 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            width: 50%;
+        }
+
+        .hero-image {
+            width: 45%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .button {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 4rem 5%;
+            background: #f0f7ff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .earn-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .earn-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .earn-card {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .earn-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+
+        .contact {
+            background: #2563eb;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero, .features-grid, .earn-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content, .hero-image {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Dabba Delight</div>
+        <div class="nav-links">
+            <a href="products.html">Products</a>
+            <a href="#rent">Rent</a>
+            <a href="#earn">Earn With Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="title">India's Most Affordable Vending Solutions</h1>
+            <p class="subtitle">Transform your business with our state-of-the-art vending machines starting at just ₹40,000</p>
+            <a href="products.html" class="button">Get Started →</a>
+        </div>
+        <div class="hero-image fade-in">
+            <img src="vendingImage.png" alt="Modern Vending Machine" >
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose VendMart?</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">Affordable Pricing</h3>
+                <p>Starting at just ₹40,000, our machines offer the best value in the market.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">Flexible Renting</h3>
+                <p>Rent our machines for just ₹7,000 per month with full maintenance support.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">24/7 Support</h3>
+                <p>Round-the-clock technical support and maintenance services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="earn" class="earn-section">
+        <h2 class="section-title">Earn With Us</h2>
+        <div class="earn-grid">
+            <div class="earn-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">Become a Distributor</h3>
+                <p style="margin-bottom: 1rem;">Partner with us to distribute our vending machines in your region. High profit margins and exclusive territory rights.</p>
+                <p style="color: #059669; font-weight: bold;">₹15,000 - ₹50,000 monthly</p>
+            </div>
+            <div class="earn-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">Location Partnership</h3>
+                <p style="margin-bottom: 1rem;">Have a prime location? Host our vending machines and earn a percentage of sales without any investment.</p>
+                <p style="color: #059669; font-weight: bold;">₹5,000 - ₹20,000 monthly</p>
+            </div>
+            <div class="earn-card fade-in">
+                <h3 style="color: #2563eb; margin-bottom: 1rem;">Franchise Model</h3>
+                <p style="margin-bottom: 1rem;">Start your own VendMart franchise with multiple machines. Full operational support provided.</p>
+                <p style="color: #059669; font-weight: bold;">₹30,000 - ₹100,000 monthly</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title" style="color: white;">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                </svg>
+                <span>+91 1234567890</span>
+            </div>
+            <div class="contact-item">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <path d="M22 6l-10 7L2 6"></path>
+                </svg>
+                <span>contact@vendmart.in</span>
+            </div>
+            <div class="contact-item">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Kolkata, India</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Dabba Delight. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>

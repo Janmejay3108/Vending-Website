@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VendMart - Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #f0f7ff, #ffffff);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .product-section {
+            padding: 2rem 5%;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 2rem auto;
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        .product-details {
+            padding: 2rem;
+            width: 50%;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .specs-list li {
+            margin: 0.5rem 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .specs-list li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .buy-button {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #1d4ed8;
+        }
+
+        .back-button {
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #1d4ed8;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: column;
+            }
+
+            .product-image, .product-details {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dabbaDelight.html" class="logo">Dabba Delight</a>
+    </nav>
+
+    <section class="product-section">
+        <a href="dabbaDelight.html" class="back-button">← Back to Home</a>
+        
+        <div class="product-card fade-in">
+            <div class="product-details">
+                <h2 class="product-title">Dabba Delight</h2>
+                <p class="product-price">₹40,000</p>
+                <p class="product-description">
+                    Experience the future of vending with our state-of-the-art smart vending machine. 
+                    Designed for reliability, efficiency, and maximum profitability.
+                </p>
+                <ul class="specs-list">
+                    <li>Digital Payment Integration (UPI, Cards, Mobile Wallets)</li>
+                    <li>Remote Monitoring System</li>
+                    <li>Energy Efficient Operation</li>
+                    <li>Temperature Control System</li>
+                    <li>24/7 Technical Support</li>
+                    <li>1 Year Warranty</li>
+                    <li>Free Installation</li>
+                </ul>
+                <a href="index.html#contact" class="buy-button">Contact Sales</a>
+            </div>
+            <img src="vendingImage.png" alt="VendMart Smart Vending Machine" class="product-image">
+        </div>
+    </section>
+
+    <script>
+        // Animation for fade-in effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeIn');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
